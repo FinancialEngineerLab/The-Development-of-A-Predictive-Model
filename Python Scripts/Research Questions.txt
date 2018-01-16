@@ -1,0 +1,23 @@
+
+!jupyter nbconvert --to script *.ipynb
+import io, os, sys, types
+import numpy as np
+try:
+    del research
+except NameError:
+    print("instance of research api does not exist yet")
+sys.path.append('../Python Scripts/APIs/')
+import api_research as research
+
+#MP4 = True performs the analysis with the MP4L and MP4C features included. MP4=False does the opposite. MP4="Only" includes only MP4L and MP4C as features
+research.finalModelScore(True)
+
+research.featureImportance(MP4=True) 
+
+##uses MP4 = True
+research.crossBusinessCycleTest()
+
+##uses MP4 =True
+research.countryPredComparison()
+
+research.adeSavGolcorrelation("UK")

@@ -1,8 +1,15 @@
+# Old unfinished toy project started during undergraduate;
+
 # The Development of A Prerdictive Model
-#Part 1: ASG Transform
+# Part 1: ASG Transform
 
 This repository contains the infrastructure used to develop the results covered in the corresponding research paper titled "Algorithmic Fixed Income Trading on Macro-Financial Indicators Part 1: Training Sets & ASG Transforms",
 which can be found on ResearchGate.
+
+## TODO
+* Remove windows dependent packages such as win32com etc
+* Test on linux
+* Clean code
 
 ## Getting Started
 
@@ -15,14 +22,13 @@ Windows operating system. ( win32Com is used to control Excel)
 Specific python packages to install
 -win32com, Sknn, theanom
 
-```
 
-#Structure
+# Structure
 The project uses a structure wherein all jupytr notebooks, produce an identical python script to be imported into another notebook or pythons script. Furthermore, code is divided into two sections API and Presentation.
 Functions and procedures are in the API. The Presentation section provides a presentable format to execute the code. Often many of the charts and graphs can be viewed directly within the notebooks. 
 As such users can simply use the Presentation notebooks in order to review results, adjusting essential parameters as needed. Users interested in the underlying methodoly should view the functions defined in the API section.
 
-#Deployment
+# Deployment
 
 ### Answering hypothesis questions
 Method 1
@@ -54,16 +60,13 @@ for an overview
 
 * **Rilwan Adewoyin** - *The Development of a Predictive Model* - [Part 1] (https://github.com/Akanni96)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
 * 
 * 
 When developing the Meta Learning Algorithm, you must be sure to use an adaptation of the mlxtend package, specifically one py file must be edited.
-The replacement for the file ìensemble_vote.pyî is located in the github repository. Copy this into the mlxtend package to replace the old code. Alternatively, 
+The replacement for the file ‚Äúensemble_vote.py‚Äù is located in this github repository. Copy this into the mlxtend package to replace the old code. Alternatively, 
 the edit required is in line 194 of ensemble_vote.py located at mlxtend/classifier/. The code np.bincount(x,weights=self.weights) should be changed to np.bincount(x.astype(int), weights=self.weights). 
 This explicit type casting ensures that this method works with classifiers which are not part of scikit learn. For example the neural network used in my script is from the sknn library, and causes a ValueError, without this edit. 
-Secondly, line 131 must have ìif self.weights and len(self.weights) changed to ìif self.weights.any() and len(self.weights)î
+Secondly, line 131 must have ‚Äúif self.weights and len(self.weights) changed to ‚Äúif self.weights.any() and len(self.weights)‚Äù
